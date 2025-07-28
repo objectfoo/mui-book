@@ -15,7 +15,10 @@ const meta = {
 			control: "number",
 			name: "Count",
 			type: "number",
-		}
+		},
+		page: { control: false },
+		rowsPerPage: { control: false },
+
 	},
 } satisfies Meta<TablePaginationProps>;
 
