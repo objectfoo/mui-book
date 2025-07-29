@@ -17,7 +17,7 @@ export function TablePagination(props: TablePaginationProps): React.ReactNode {
 	const [rowsPerPage, setRowsPerPage] = useState(10);
 	useEffect(() => {
 		if (lastCount.current !== props.count) {
-			setPage(0)
+			setPage(0);
 		}
 	}, [props.count]);
 

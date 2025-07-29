@@ -1,0 +1,12 @@
+import Mui{{ pascalCase ComponentName }}, { type {{ pascalCase ComponentName }}Props as Mui{{ pascalCase ComponentName }}Props } from "@mui/material/{{ pascalCase ComponentName }}";
+
+type {{ pascalCase ComponentName }}BaseProps = Pick<Mui{{ pascalCase ComponentName }}Props, "color">;
+
+export interface {{ pascalCase ComponentName }}Props extends {{ pascalCase ComponentName }}BaseProps {
+	label: string;
+}
+
+export function {{ pascalCase ComponentName }}({ label, ...rest }: {{ pascalCase ComponentName }}Props): React.ReactNode {
+	return <Mui{{ pascalCase ComponentName }} {...rest}>{label}</Mui{{ pascalCase ComponentName }}>;
+}
+

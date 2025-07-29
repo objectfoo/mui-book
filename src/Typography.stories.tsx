@@ -12,7 +12,6 @@ const meta = {
 	},
 	argTypes: {
 		label: { type: "string" },
-		paragraph: { type: "boolean" },
 		color: {
 			control: "select",
 			options: [
@@ -55,7 +54,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * Stories
  */
-export const Text: Story = {
+export const Default: Story = {
 	args: {
 		label: "This is some text, rendered in a page.",
 		variant: "body1",

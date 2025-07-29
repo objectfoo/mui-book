@@ -6,6 +6,6 @@ export interface TypographyProps extends TypographyBaseProps {
 	label: string;
 }
 
-export const Typography = ({ label, ...rest }: TypographyProps) => (
-	<MuiTypography {...rest}>{label}</MuiTypography>
-);
+export function Typography({ label, ...rest }: TypographyProps): React.ReactNode {
+	return <MuiTypography {...rest}>{label}</MuiTypography>;
+}

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button, type ButtonProps } from "./Button";
-
+import PsychologyIcon from "@mui/icons-material/PsychologyRounded";
+import EngineeringIcon from "@mui/icons-material/EngineeringRounded";
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
 	title: "Inputs/Button",
@@ -13,12 +14,8 @@ const meta = {
 	argTypes: {
 		label: { type: "string" },
 		size: {
-			control: "select",
+			control: "radio",
 			options: ["small", "medium", "large"] satisfies ButtonProps["size"][],
-		},
-		variant: {
-			control: "select",
-			options: ["contained", "outlined", "text"] satisfies ButtonProps["variant"][],
 		},
 		color: {
 			control: "select",
@@ -31,7 +28,22 @@ const meta = {
 				"success",
 				"warning",
 			] satisfies ButtonProps["color"][],
-		}
+		},
+		disabled: { control: "boolean", },
+		disableElevation: { control: "boolean" },
+		endIcon: {},
+		fullWidth: { control: "boolean" },
+		loading: { control: "boolean" },
+		startIcon: { control: false },
+		loadingIndicator: {},
+		loadingPosition: {
+			control: "radio",
+			options: ["start", "center", "end"] satisfies ButtonProps["loadingPosition"][],
+		},
+		variant: {
+			control: "radio",
+			options: ["contained", "outlined", "text"] satisfies ButtonProps["variant"][],
+		},
 	},
 } satisfies Meta<ButtonProps>;
 
@@ -42,23 +54,36 @@ type Story = StoryObj<typeof meta>;
 /**
  * Stories
  */
-export const Text: Story = {
+export const Default: Story = {
+	parameters: {
+		controls: { exclude: ["loadingIndicator", "startIcon", "endIcon"] }
+	},
 	args: {
-		variant: "text",
+		variant: "outlined",
 		label: "Text",
+		size: "medium",
+		color: "primary",
+		disabled: false,
+		disableElevation: false,
+		fullWidth: false,
+		loading: false,
+		loadingPosition: "start",
 	},
 };
 
-export const Contained: Story = {
+export const StartIcon: Story = {
 	args: {
-		variant: "contained",
-		label: "Contained",
+		variant: "outlined",
+		label: "Start Icon",
+		startIcon: <PsychologyIcon />
 	}
 };
 
-export const Outlined: Story = {
+export const EndIcon: Story = {
 	args: {
 		variant: "outlined",
-		label: "Outlined",
+		label: "End Icon",
+		endIcon: <EngineeringIcon />
 	}
 };
+

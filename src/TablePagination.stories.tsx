@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * Stories
  */
-export const TablePaginationComponent: Story = {
+export const Default: Story = {
 	args: {
 		count: 20,
 		page: 1,
