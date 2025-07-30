@@ -28,7 +28,7 @@ const CheckboxAndRadioFocusStyles: CSSInterpolation = {
 /**
  * Component Accessibility override
  */
-export const A11yFocusOverrides = (_theme: Theme): ThemeOptions => {
+export const A11yFocusOverrides = (): ThemeOptions => {
 	return {
 		components: {
 			MuiButtonBase: {
@@ -152,7 +152,7 @@ export const WhsIconStyles = (theme: Theme): ThemeOptions => {
 };
 
 
-export type SvgFontSize = SvgIconTypeMap["props"]["fontSize"]
+export type SvgFontSize = SvgIconTypeMap["props"]["fontSize"];
 export type SvgColor = SvgIconTypeMap["props"]["color"];
 
 /**

@@ -25,7 +25,7 @@ export function TablePagination(props: TablePaginationProps): React.ReactNode {
 		page={page}
 		count={props.count}
 		onRowsPerPageChange={(e) => setRowsPerPage(parseInt(e.target.value, 10))}
-		onPageChange={() => setPage(page + 1)}
+		onPageChange={(_, newPage) => setPage(newPage)}
 		rowsPerPage={rowsPerPage}
 		rowsPerPageOptions={RowsPerPageOptions}
 	/>;

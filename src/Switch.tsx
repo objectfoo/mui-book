@@ -13,13 +13,7 @@ export interface SwitchProps extends MuiSwitchBaseProps {
 }
 
 export default function Switch({ label, ...rest }: SwitchProps): React.ReactNode {
-	const control = (
-		<MuiSwitch
-			{...rest}
-		/>
-	);
-
 	return (
-		<FormControlLabel control={control} label={label} />
+		<FormControlLabel control={<MuiSwitch {...rest} />} label={label} />
 	);
 }
