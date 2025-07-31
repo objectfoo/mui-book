@@ -4,8 +4,8 @@ import { Accordion, type AccordionProps } from "./Accordion";
 const meta = {
 	title: "Surfaces/Accordion",
 	component: Accordion,
-	tags: ["autodocs", "surfaces"],
-	parameters: { layout: "centered" },
+	tags: [],
+	parameters: {},
 	argTypes: {
 		disableGutters: {
 			control: "boolean",
@@ -19,9 +19,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/**
- * Stories
- */
 export const Default: Story = {
 	args: {
 		disableGutters: false,

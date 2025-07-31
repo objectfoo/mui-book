@@ -1,9 +1,9 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import { type Theme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { type Theme, ThemeProvider, createTheme, type ThemeOptions } from '@mui/material/styles';
 import type { Decorator } from "@storybook/react-vite";
 import { A11yFocusOverrides, BaseTheme } from "./CustomTheme";
 
-export const WithThemeProvider: Decorator = (Story) => {
+export const ContentThemeProvider: Decorator = (Story) => {
 	return (
 		<ThemeProvider theme={CreateWhsTheme()}>
 			<CssBaseline />
@@ -13,12 +13,13 @@ export const WithThemeProvider: Decorator = (Story) => {
 };
 
 function CreateWhsTheme(): Theme {
-	const colors = createTheme(BaseTheme({
+	const options: ThemeOptions = BaseTheme({
 		palette: {
 			primary: {
-				main: "#0078BF",
+				main: "#3557FF",
 			},
 		},
-	}));
-	return createTheme(colors, A11yFocusOverrides(colors));
+	});
+
+	return createTheme(options, A11yFocusOverrides());
 }

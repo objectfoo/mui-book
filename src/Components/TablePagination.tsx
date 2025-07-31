@@ -1,15 +1,10 @@
 import MuiTablePagination, { type TablePaginationProps as MuiTablePaginationProps } from "@mui/material/TablePagination";
 import { useEffect, useRef, useState } from "react";
 
-type TablePaginationBaseProps = Pick<
-	MuiTablePaginationProps,
-	"count" | "page" | "onPageChange" | "rowsPerPage" | "onRowsPerPageChange"
->;
+type PropPickList = "count" | "page" | "onPageChange" | "rowsPerPage" | "onRowsPerPageChange" | "rowsPerPageOptions";
+type TablePaginationBaseProps = Pick<MuiTablePaginationProps, PropPickList>;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TablePaginationProps extends TablePaginationBaseProps { }
-
-const RowsPerPageOptions = [10, 25, 50];
 
 export function TablePagination(props: TablePaginationProps): React.ReactNode {
 	const lastCount = useRef(props.count);
@@ -27,7 +22,7 @@ export function TablePagination(props: TablePaginationProps): React.ReactNode {
 		onRowsPerPageChange={(e) => setRowsPerPage(parseInt(e.target.value, 10))}
 		onPageChange={(_, newPage) => setPage(newPage)}
 		rowsPerPage={rowsPerPage}
-		rowsPerPageOptions={RowsPerPageOptions}
+		rowsPerPageOptions={props.rowsPerPageOptions}
 	/>;
 }
 

@@ -4,7 +4,7 @@ import MuiSwitch, { type SwitchProps as MuiSwitchProps } from "./Switch";
 const meta = {
 	title: "Inputs/Switch",
 	component: MuiSwitch,
-	tags: ["autodocs", "input"],
+	tags: [],
 	parameters: {},
 	argTypes: {
 		label: { type: "string" },
@@ -18,17 +18,20 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Medium: Story = {
 	args: {
-		label: "Medium Switch",
+		label: "Medium",
 		size: "medium",
 		color: "primary",
+		defaultChecked: true,
+		disabled: false,
+		edge: "start",
 	},
 };
 
 export const Small: Story = {
 	args: {
-		label: "Small Switch",
+		...Medium.args,
+		label: "Small",
 		size: "small",
-		color: "primary",
 	},
 };
 

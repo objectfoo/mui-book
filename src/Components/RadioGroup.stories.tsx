@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Autocomplete, type AutocompleteProps } from "./Autocomplete";
+import { RadioGroup, type RadioGroupProps } from "./RadioGroup";
+
 
 const meta = {
-	title: "Section Name Missing/autocomplete",
-	component: Autocomplete,
-	tags: ["autodocs", "section-tag-missing"],
+	title: "Section Name Missing/RadioGroup",
+	component: RadioGroup,
+	tags: [],
 	parameters: {},
 	argTypes: {
 		label: { type: "string" },
 	},
-} satisfies Meta<AutocompleteProps>;
+} satisfies Meta<RadioGroupProps>;
 
 export default meta;
 
