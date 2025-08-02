@@ -3,12 +3,13 @@ import { RadioGroup, type RadioGroupProps } from "./RadioGroup";
 
 
 const meta = {
-	title: "Section Name Missing/RadioGroup",
+	title: "Inputs/RadioGroup",
 	component: RadioGroup,
 	tags: [],
 	parameters: {},
 	argTypes: {
 		label: { type: "string" },
+		row: { control: "boolean" },
 	},
 } satisfies Meta<RadioGroupProps>;
 
@@ -18,6 +19,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		label: "label",
+		label: "Pet",
+		row: false,
 	},
 };
+
+// TODO: Add Radio sub-component story
+
