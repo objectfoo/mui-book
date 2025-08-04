@@ -1,5 +1,6 @@
 # mui-book
 
+
 ## Needed to match LG
 
 ### Inputs
@@ -34,5 +35,19 @@
 * [ ] Tabs
 
 ## Not components
+* [ ] **Focus Ring* testing page
 * [ ] Colors
 * [ ] ContrastChecker
+
+## Experimental
+
+### LongJohns
+
+Component to render the chrome.
+
+* full height by default
+* main nav
+* client branding (optional)
+* footer (optional)
+* dark mode
+* render css vars to content element for theming/theme sharing?
