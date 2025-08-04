@@ -7,7 +7,7 @@
 * [x] Button
 * [x] Checkbox
 * [ ] DateTime
-* [ ] Radio
+* [x] RadioGroup (radiogroup/radio)
 * [ ] Select
 * [x] Switch
 * [ ] TextField
