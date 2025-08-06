@@ -4,7 +4,7 @@ import PsychologyIcon from "@mui/icons-material/PsychologyRounded";
 import EngineeringIcon from "@mui/icons-material/EngineeringRounded";
 
 const meta = {
-	title: "Inputs/Button",
+	title: "Components/Inputs/Button",
 	component: Button,
 	tags: [],
 	parameters: {},

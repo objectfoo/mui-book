@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Autocomplete, type AutocompleteProps } from "./Autocomplete";
 
 const meta = {
-	title: "Inputs/Autocomplete",
+	title: "Components/Inputs/Autocomplete",
 	component: Autocomplete,
 	tags: [],
 	parameters: {},

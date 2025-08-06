@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TablePagination, type TablePaginationProps } from "./TablePagination";
 
 const meta = {
-	title: "Navigation/TablePagination",
+	title: "Components/Navigation/TablePagination",
 	component: TablePagination,
 	tags: [],
 	parameters: {},

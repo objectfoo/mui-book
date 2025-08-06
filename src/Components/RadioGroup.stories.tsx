@@ -3,7 +3,7 @@ import { RadioGroup, type RadioGroupProps } from "./RadioGroup";
 
 
 const meta = {
-	title: "Inputs/RadioGroup",
+	title: "Components/Inputs/RadioGroup",
 	component: RadioGroup,
 	tags: [],
 	parameters: {},
