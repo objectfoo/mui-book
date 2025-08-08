@@ -3,7 +3,7 @@ import { Typography, colors, type TypographyProps, } from "./Typography";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-	title: "Data Display/Typography",
+	title: "Components/Data Display/Typography",
 	component: Typography,
 	tags: [],
 	parameters: {},

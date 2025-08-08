@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import MuiSwitch, { type SwitchProps as MuiSwitchProps } from "./Switch";
 
 const meta = {
-	title: "Inputs/Switch",
+	title: "Components/Inputs/Switch",
 	component: MuiSwitch,
 	tags: [],
 	parameters: {},

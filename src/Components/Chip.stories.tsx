@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Chip, type ChipProps } from "./Chip";
 
 const meta = {
-	title: "Section Name Missing/Chip",
+	title: "Components/Inputs/Chip",
 	component: Chip,
 	tags: [],
 	parameters: {},
