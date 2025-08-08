@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "npm run storybook",
+    "build": "npm run build-storybook",
     "lint": "eslint .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "plop": "plop"
@@ -25,6 +24,7 @@
     "@mui/x-date-pickers": "^8.9.2",
     "@storybook/addon-docs": "^9.1.1",
     "@storybook/react-vite": "^9.1.0",
+    "@types/luxon": "^3.7.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
