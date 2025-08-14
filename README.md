@@ -7,7 +7,7 @@
 * [x] Autocomplete
 * [x] Button
 * [x] Checkbox
-* [ ] DateTime
+* [x] DateTime
 * [x] RadioGroup (radiogroup/radio)
 * [ ] Select
 * [x] Switch
@@ -38,8 +38,6 @@
 * [ ] **Focus Ring* testing page
 * [ ] Colors
 * [ ] ContrastChecker
-
-## Experimental
 
 ### LongJohns
 
