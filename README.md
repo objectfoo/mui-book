@@ -1,6 +1,5 @@
 # mui-book
 
-
 ## Needed to match LG
 
 ### Inputs
@@ -40,8 +39,9 @@
 * [ ] ContrastChecker
 
 ### LongJohns
-
 Component to render the chrome.
+
+Need this for sample page wrapper
 
 * full height by default
 * main nav
@@ -49,3 +49,13 @@ Component to render the chrome.
 * footer (optional)
 * dark mode
 * render css vars to content element for theming/theme sharing?
+
+### Sample pages
+* home page with dashboard
+* ??
+
+### Misc things to test
+
+* allow user to set tonal offset, how does that affect the look
+* set font sizes with rems instead of px and see if the htmlFontSize can fix it
+* if htmlFontSize works try to get responsive font sizing to work

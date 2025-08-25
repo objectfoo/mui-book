@@ -6,7 +6,7 @@ import EngineeringIcon from "@mui/icons-material/EngineeringRounded";
 const meta = {
 	title: "Components/Inputs/Button",
 	component: Button,
-	tags: [],
+	tags: ["autodocs"],
 	parameters: {},
 	argTypes: {
 		endIcon: { control: false },

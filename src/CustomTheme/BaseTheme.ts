@@ -13,7 +13,7 @@ const BaseTheme = (options: ThemeOptions): ThemeOptions => {
 			primary.contrastText = getContrastRatio(primary.main, "#FFF") >= ContrastThreshold ? "#FFF" : "#000";
 		}
 	}
-	return deepmerge(DefaultTheme, options)
+	return deepmerge(DefaultTheme, options);
 };
 
 export default BaseTheme;
@@ -123,4 +123,4 @@ const DefaultTheme: ThemeOptions = {
 			letterSpacing: "1.33px",
 		},
 	},
-}
+};
