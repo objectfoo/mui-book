@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Checkbox, type CheckboxProps, colors, sizes } from "./Checkbox";
+import { Checkbox, type CheckboxProps } from "./Checkbox";
 
 const meta = {
 	title: "Components/Inputs/Checkbox",
@@ -8,8 +8,20 @@ const meta = {
 	parameters: {},
 	argTypes: {
 		label: { type: "string" },
-		color: { options: colors },
-		size: { options: sizes }
+		color: {
+			options: [
+				"default",
+				"primary",
+				"secondary",
+				"error",
+				"info",
+				"success",
+				"warning",
+			] satisfies CheckboxProps["color"][],
+		},
+		size: {
+			options: ["small", "medium", "large"] satisfies CheckboxProps["size"][],
+		}
 	},
 } satisfies Meta<CheckboxProps>;
 

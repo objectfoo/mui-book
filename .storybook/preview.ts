@@ -1,14 +1,24 @@
-import type { Preview, Decorator } from '@storybook/react-vite';
+import type { Preview, Decorator } from "@storybook/react-vite";
 import { ContentThemeProvider } from "../src/ContentThemeProvider";
 
 const preview: Preview = {
 	parameters: {
+		backgrounds: {
+			options: {
+				dark: { name: 'Dark', value: "#121212" },
+				light: { name: 'Light', value: "#ffffff" },
+			}
+		},
 		controls: {
+			expanded: true,
 			matchers: {
 				color: /(background|color)$/i,
 				date: /Date$/i,
 			},
 		},
+	},
+	initialGlobals: {
+		background: "light",
 	},
 };
 

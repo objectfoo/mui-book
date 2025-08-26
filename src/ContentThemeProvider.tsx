@@ -1,25 +1,14 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import { type Theme, ThemeProvider, createTheme, type ThemeOptions } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import type { Decorator } from "@storybook/react-vite";
-import { A11yFocusOverrides, BaseTheme } from "./CustomTheme";
+import { CreateTheme } from "./CustomTheme/AggregateTheme";
 
-export const ContentThemeProvider: Decorator = (Story) => {
+export const ContentThemeProvider: Decorator = (Story, ctx) => {
+	const mode = ctx.globals?.backgrounds?.value === "dark" ? "dark" : "light";
 	return (
-		<ThemeProvider theme={CreateWhsTheme()}>
+		<ThemeProvider theme={CreateTheme({ mode })}>
 			<CssBaseline />
 			<Story />
 		</ThemeProvider>
 	);
 };
-
-function CreateWhsTheme(): Theme {
-	const options: ThemeOptions = BaseTheme({
-		palette: {
-			primary: {
-				main: "#3557FF",
-			},
-		},
-	});
-
-	return createTheme(options, A11yFocusOverrides());
-}

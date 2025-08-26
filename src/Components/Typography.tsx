@@ -6,17 +6,6 @@ export interface TypographyProps extends TypographyBaseProps {
 	label: string;
 }
 
-export const colors: MuiTypographyProps["color"][] = [
-	"primary",
-	"secondary",
-	"textPrimary",
-	"textSecondary",
-	"textDisabled",
-	"error",
-	"info",
-	"success",
-];
-
 const variants: MuiTypographyProps["variant"][] = [
 	"h1",
 	"h2",

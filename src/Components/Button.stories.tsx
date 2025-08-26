@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button, colors, loadingPositions, sizes, variants, type ButtonProps } from "./Button";
+import { Button, type ButtonProps } from "./Button";
 import PsychologyIcon from "@mui/icons-material/PsychologyRounded";
 import EngineeringIcon from "@mui/icons-material/EngineeringRounded";
 
@@ -10,10 +10,19 @@ const meta = {
 	parameters: {},
 	argTypes: {
 		endIcon: { control: false },
-		size: { control: "radio", options: sizes },
-		color: { control: "select", options: colors },
-		variant: { control: "radio", options: variants },
-		loadingPosition: { control: "radio", options: loadingPositions },
+		size: {
+			control: "radio",
+			options: ["small", "medium", "large"] satisfies ButtonProps["size"][],
+		},
+		color: {
+			control: "select",
+			options: ["error", "info", "inherit", "primary", "secondary", "success", "warning"] satisfies ButtonProps["color"][],
+		},
+		variant: {
+			control: "radio",
+			options: ["contained", "outlined", "text"] satisfies ButtonProps["variant"][],
+		},
+		loadingPosition: { control: "radio", options: ["start", "center", "end"] satisfies ButtonProps["loadingPosition"][] },
 		label: { type: "string" },
 		startIcon: { control: false },
 		loading: { control: "boolean" },
@@ -42,7 +51,6 @@ export const Default: Story = {
 	},
 };
 
-// TODO: Create an icon selector control and get rid of the start icon/end icon stories?
 export const StartIcon: Story = {
 	parameters: { controls: { exclude: ["loadingIndicator", "startIcon", "endIcon"] } },
 	args: {
