@@ -25,13 +25,14 @@ const CheckboxAndRadioFocusStyles = {
 
 
 export function CreateTheme(options: CreateThemeOptions = {}): ReturnType<typeof createTheme> {
+	const lightMode = options.mode === "light";
 	const themeOptions: MuiCreateThemeOptions = {
 		cssVariables: true,
 		direction: options.direction,
 
 		// MARK: palette
 		palette: {
-			mode: options.mode ?? "light",
+			mode: lightMode ? "light" : "dark",
 			contrastThreshold: options.contrastThreshold ?? 3,
 			tonalOffset: options.tonalOffset ?? 0.2,
 			primary: { main: "#0078BF" },
@@ -40,18 +41,20 @@ export function CreateTheme(options: CreateThemeOptions = {}): ReturnType<typeof
 			success: { main: "#1A6500" },
 			error: { main: "#B00020" },
 			warning: { main: "#FFBF3F" },
-			text: {
-				primary: "#000000DE",
-				secondary: "#00000099",
-				disabled: "#00000061",
-			},
-			action: {
-				disabled: "rgba(0, 0, 0, 0.56)",
-				disabledBackground: "rgba(0, 0, 0, 0.1)",
-				hoverOpacity: 0.033,
-			}
+			// if light mode use our presets else fallback to mui defaults
+			...(lightMode && {
+				text: {
+					primary: "#000000DE",
+					secondary: "#00000099",
+					disabled: "#00000061",
+				},
+				action: {
+					disabled: "rgba(0, 0, 0, 0.56)",
+					disabledBackground: "rgba(0, 0, 0, 0.1)",
+					hoverOpacity: 0.033,
+				},
+			}),
 		},
-
 		// MARK: typography
 		typography: {
 			htmlFontSize: options.htmlFontSize ?? 16,
