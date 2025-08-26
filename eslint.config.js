@@ -27,9 +27,8 @@ export default tseslint.config(
 	],
 	storybook.configs["flat/recommended"],
 	{
-		files: [],
 		rules: {
-			"@typescript-eslint/no-empty-object-type": off,
+			"@typescript-eslint/no-empty-object-type": 0,
 		}
 	}
 );

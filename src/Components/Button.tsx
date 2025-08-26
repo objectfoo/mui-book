@@ -5,11 +5,6 @@ type PropPickList = "size" | "color" | "variant" | "disabled" | "disableElevatio
 
 type ButtonBaseProps = Pick<MuiButtonProps, PropPickList>;
 
-export const colors: MuiButtonProps["color"][] = ["error", "info", "inherit", "primary", "secondary", "success", "warning"];
-export const sizes: MuiButtonProps["size"][] = ["medium", "large", "small"];
-export const variants: MuiButtonProps["variant"][] = ["contained", "outlined", "text"];
-export const loadingPositions: MuiButtonProps["loadingPosition"][] = ["start", "center", "end"];
-
 export interface ButtonProps extends ButtonBaseProps {
 	label: string;
 }
