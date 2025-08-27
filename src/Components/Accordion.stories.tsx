@@ -7,11 +7,10 @@ const meta = {
 	tags: [],
 	parameters: {},
 	argTypes: {
-		disableGutters: {
-			control: "boolean",
-			type: "boolean",
-			name: "disable gutters"
-		}
+		disableGutters: { control: "boolean", },
+		defaultExpanded: { control: false },
+		disabled: { control: "boolean"},
+		square: { control: "boolean"},
 	}
 } satisfies Meta<AccordionProps>;
 
@@ -22,5 +21,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		disableGutters: false,
+		defaultExpanded: true,
+		expanded: true,
+		disabled: false,
+		square: false,
 	},
 };

@@ -6,12 +6,19 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 
-export type AccordionProps = Pick<MuiAccordionProps, "disableGutters">;
+export type AccordionProps = Pick<
+	MuiAccordionProps,
+	"disableGutters" |
+	"defaultExpanded" |
+	"disabled" |
+	"expanded" |
+	"square"
+>;
 
 export function Accordion(props: AccordionProps) {
 	return (
 		<>
-			<MuiAccordion disableGutters={props.disableGutters} defaultExpanded>
+			<MuiAccordion {...props}>
 				<MuiAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">
 					<Typography component="span">Accordion 1</Typography>
 				</MuiAccordionSummary>
@@ -20,7 +27,8 @@ export function Accordion(props: AccordionProps) {
 					malesuada lacus ex, sit amet blandit leo lobortis eget.
 				</MuiAccordionDetails>
 			</MuiAccordion>
-			<MuiAccordion>
+
+			<MuiAccordion {...props}>
 				<MuiAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2-content" id="panel2-header">
 					<Typography component="span">Accordion 2</Typography>
 				</MuiAccordionSummary>
@@ -29,7 +37,8 @@ export function Accordion(props: AccordionProps) {
 					malesuada lacus ex, sit amet blandit leo lobortis eget.
 				</MuiAccordionDetails>
 			</MuiAccordion>
-			<MuiAccordion>
+
+			<MuiAccordion {...props}>
 				<MuiAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3-content" id="panel3-header">
 					<Typography component="span">Accordion Actions</Typography>
 				</MuiAccordionSummary>
