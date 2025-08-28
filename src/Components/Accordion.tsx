@@ -17,7 +17,7 @@ export type AccordionProps = Pick<
 
 export function Accordion(props: AccordionProps) {
 	return (
-		<>
+		<div>
 			<MuiAccordion {...props}>
 				<MuiAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">
 					<Typography component="span">Accordion 1</Typography>
@@ -51,6 +51,6 @@ export function Accordion(props: AccordionProps) {
 					<Button>Agree</Button>
 				</MuiAccordionActions>
 			</MuiAccordion>
-		</>
+		</div>
 	);
 }
