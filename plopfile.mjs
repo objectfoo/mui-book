@@ -15,4 +15,18 @@ export default function (
 			{ type: "add", path: "src/Components/{{ pascalCase ComponentName }}.stories.tsx", templateFile: "plop-templates/Component.stories.tsx.hbs" },
 		]
 	});
+
+	plop.setGenerator("FocusAndTestSection", {
+		description: "focus and contrast section creator",
+		prompts: [
+			{ type: "input", name: "FocusAndTestName", message: "name of focus  and test section" },
+		],
+		actions: [
+			{
+				type: "add",
+				path: "src/Components/FocusAndContrast/Sections/{{ pascalCase FocusAndTestName }}Section.tsx",
+				templateFile: "plop-templates/FocusAndContrastSection.tsx.hbs",
+			},
+		]
+	});
 };

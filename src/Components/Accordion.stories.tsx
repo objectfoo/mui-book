@@ -21,8 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		disableGutters: false,
-		defaultExpanded: true,
-		expanded: true,
+		defaultExpanded: false,
 		disabled: false,
 		square: false,
 	},

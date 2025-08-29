@@ -1,5 +1,8 @@
 import type { Preview, Decorator } from "@storybook/react-vite";
 import { ContentThemeProvider } from "../src/ContentThemeProvider";
+import "@fontsource/lato/latin.css";
+import "@fontsource/lato/latin-italic.css";
+
 
 const preview: Preview = {
 	parameters: {
