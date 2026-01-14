@@ -8,35 +8,49 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: 'pages'
+  group: pages
   cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
+  
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
+    
     steps:
-      - name: Checkout
+      - id: action_checkout
+        name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Node
+
+      - id: action_setup_node
+        name: Node
         uses: actions/setup-node@v6
         with:
           node-version: ${{ vars.NODE_VERSION }}
           package-manager-cache: false
-          cache: npm
-      - name: Install dependencies
+
+      - id: run_install_npm
+        name: Npm
+        run: npm i -g npm@11.6.2
+
+      - id: run_npm_ci
+        name: Npm ci
         run: npm ci
-      - name: Build Storybook
-        run: npm exec storybook build
+
+      - id: storybook_build
+        name: Storybook build
+        run: npm run build-storybook 
+
       # Upload pages artifact
-      - name: Upload Pages artifact
+      - id: action_upload_artifiact
+        name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: storybook-static
-      # Deploy to Github Pages
+
       - id: deploy
         name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
