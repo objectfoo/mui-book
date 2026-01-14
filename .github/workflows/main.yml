@@ -24,10 +24,11 @@ jobs:
       - name: Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.13.0
+          node-version: ${{ vars.NODE_VERSION }}
+          npm-version: ${{ vars.NPM_VERSION }}
           cache: npm
       - name: Install dependencies
-        run: npm ci --force
+        run: npm ci
       - name: Build Storybook
         run: npm exec storybook build
       # Upload pages artifact
@@ -41,4 +42,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           token: ${{ github.token }}
-
