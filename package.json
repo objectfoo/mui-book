@@ -11,8 +11,12 @@
     "build-storybook": "storybook build",
     "plop": "plop"
   },
+  "engines": {
+    "node": "24.13.0",
+    "npm": "11.6.2"
+  },
   "volta": {
-    "node": "22.17.1"
+    "node": "24.13.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.0",
