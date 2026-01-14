@@ -25,11 +25,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm' # Adjust caching strategy and configuration if using other package managers
+          cache: npm
       - name: Install dependencies
         run: npm ci # Replace with appropriate command if using other package managers
       - name: Build Storybook
-        run: npm run build-storybook
+        run: npm exec storybook build
       # Upload pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
