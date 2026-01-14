@@ -36,6 +36,10 @@ jobs:
         name: Npm
         run: npm i -g npm@11.6.2
 
+      - id: cache_clear
+        name: clear cache
+        run: npm cache clean --force
+
       - id: run_npm_ci
         name: Npm ci
         run: npm ci
